@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="mainContainer">
+        <div class="subContainer center">
+            <div class="firstPage flex center">
+                <div>Rcok Paper Scissor</div>
+                <button>Start the game</button>
+            </div>
+        </div>
+        
+        <div class="subContainer center">
+            <div class="secondPage flex center">
+                <label>Enter your name</label>
+                <input type="text" placeholder="Your name">
+                <button class="secStartBtn">Start</button>
+            </div>
+        </div>
+
+        <div class="subContainer center">
+            <div class="thirdPage flex center">
+                <div class="resultContainer">
+                    <div class="textAlign">
+                        <div class="player">Player</div>
+                        <div class="playerWinCount">0</div>
+                    </div>
+                    <div class="textAlign">
+                        <div>Tie</div>
+                        <div class="draw">0</div>
+                    </div>
+                    <div class="textAlign">
+                        <div>AI</div>
+                        <div class="computerWinCount">0</div>
+                    </div>
+                </div>
+                <div class="resultDeclare">
+                    
+                </div>
+                <div class="showingChoices">
+                    <div class="inline-block">
+                        <div>Your Option</div>
+                        <img src="paper.png" alt="" class="playerChoicePng rps">
+                    </div>
+                    <div  class="inline-block">
+                        <div>Computer Option</div>
+                        <img src="rock.png" alt="" class="computerChoicePng rps">
+                    </div>
+                </div>
+                <div class="playerOption">
+                    <div>Choose your option</div>
+                    <div class="optionsContainer">
+                        <img src="rock.png" alt="" class="rock rps" name="rock">
+                        <img src="paper.png" alt="" class="paper rps" name="paper" >
+                        <img src="scissor.png" alt="" class="scissor rps" name="scissor">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="subContainer center">
+            <div class="fourthPage flex center">
+                <div class="name">Player Name</div>
+                <div class="winOrLose">You Win/Lose</div>
+                <div>
+                    <button>Play Again</button>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
