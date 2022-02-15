@@ -47,7 +47,7 @@ function getPlayerName(){
 }
 
 
-//function that disappear previous page and appear next page
+//disappear previous page and appear next page
 function changePage(disappearPage,appearPage){
     disappearPage.style.zIndex='0';
     disappearPage.style.opacity='0';
@@ -62,7 +62,7 @@ const possibleResult=['rock','paper','scissor']
 
 
 //Computer Option
-function computerOption(){
+function getComputerOption(){
     let randomIndex = Math.floor(Math.random()*3)
     return possibleResult[randomIndex]
 }
@@ -70,7 +70,7 @@ let computerChoice;
 rockPaperScissor.forEach((item)=>{
     item.addEventListener('click',()=>{
         showingChoices.style.opacity='1'
-        computerValue=computerOption()
+        computerValue=getComputerOption()
         playGame(item.name,computerValue)
     })
 })
@@ -88,26 +88,14 @@ function playGame(playerChoice,computerChoice){
 
 function whoWin(win,lose,playerOption,computer){
     if(computer==win){
-        console.log('you win')
-        computerChoicePng.src=`${win}.png`
-        playerChoicePng.src=`${playerOption}.png`
-        resultDeclare.textContent='You win'
-        resultDeclare.style.color='#03750d'
-        playerWinCountTag.textContent=++winCount;
+        winCount++;
+        showTheResult(win,playerOption,'YOU WIN!','#03750d',winCount,playerWinCountTag)
     }else if (computer==lose){
-        console.log('you lose')
-        computerChoicePng.src=`${lose}.png`
-        playerChoicePng.src=`${playerOption}.png`
-        resultDeclare.textContent='You lose'
-        resultDeclare.style.color='#a70b0b'
-        computerWinCountTag.textContent=++loseCount;
+        loseCount++;
+        showTheResult(lose,playerOption,'YOU LOSE!','#a70b0b',loseCount,computerWinCountTag)
     }else{
-        console.log('it is draw')
-        computerChoicePng.src=`${playerOption}.png`
-        playerChoicePng.src=`${playerOption}.png`
-        resultDeclare.textContent='It is draw'
-        resultDeclare.style.color='#003566'
-        tieTag.textContent=++drawCount
+        drawCount++;
+        showTheResult(computer,playerOption,'IT IS DRAW','#003566',drawCount,tieTag)
     }
     if(winCount==5){
         displayResult('WIN')
@@ -116,6 +104,14 @@ function whoWin(win,lose,playerOption,computer){
         displayResult('LOSE')
         winOrLose.style.color='#a70b0b'
     }   
+}
+
+function showTheResult(img,option,winOrLoseOrDraw,Color,count,tag){
+    computerChoicePng.src=`${img}.png`
+    playerChoicePng.src=`${option}.png`
+    resultDeclare.textContent=`${winOrLoseOrDraw}!`
+    resultDeclare.style.color=Color
+    tag.textContent=count;
 }
 
 function displayResult(result){
