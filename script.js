@@ -12,6 +12,7 @@ let playerName;
 //Elements in thirdPage
 const thirdPage=document.querySelector('.thirdPage')
 const player=document.querySelector('.player')
+const showingChoices=document.querySelector('.showingChoices')
 const rockPaperScissor= document.querySelectorAll('.playerOption img')
 const playerChoicePng=document.querySelector('.playerChoicePng')
 const computerChoicePng=document.querySelector('.computerChoicePng')
@@ -68,6 +69,7 @@ function computerOption(){
 let computerChoice;
 rockPaperScissor.forEach((item)=>{
     item.addEventListener('click',()=>{
+        showingChoices.style.opacity='1'
         computerValue=computerOption()
         playGame(item.name,computerValue)
     })

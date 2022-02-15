@@ -47,7 +47,7 @@ body{
 
 .secondPage,.thirdPage,.fourthPage,.firstPage{
     opacity: 0;
-    transition: all 0.5s ease;
+    transition: all 0.6s ease;
     position: absolute;
     z-index: 0;
 }
@@ -97,7 +97,7 @@ body{
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
-    
+    align-items:center;
 }
 
 .rock,.paper,.scissor{
@@ -115,6 +115,8 @@ body{
     width: 100%;
     display: flex;
     justify-content: center;
+    opacity: 0;    
+    transition: all 1s ease;
 }
 
 .rps{
@@ -151,9 +153,7 @@ input{
         width: 80px;
     }
 
-    .thirdPage{
-
-    }
+    
 
 
 
