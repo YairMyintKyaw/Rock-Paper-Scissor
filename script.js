@@ -131,6 +131,7 @@ playAgainBtn.addEventListener('click',function(){
     drawCount=0;
     playerWinCountTag.textContent=0
     computerWinCountTag.textContent=0
+    showingChoices.style.opacity=0
     tieTag.textContent=0
     resultDeclare.innerHTML=''
 })
