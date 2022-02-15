@@ -54,7 +54,7 @@ body{
 
 
 .thirdPage{
-    justify-content:space-between;
+    justify-content: center;
 
 }
 
@@ -149,6 +149,10 @@ input{
 
     .rps{
         width: 80px;
+    }
+
+    .thirdPage{
+
     }
 
 
